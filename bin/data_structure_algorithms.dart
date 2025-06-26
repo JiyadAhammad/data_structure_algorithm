@@ -1,7 +1,8 @@
-import 'patterns/square_pattern.dart';
+import 'imports.dart';
 
 void main() {
-  squarePattern(5);
+  final answer = twoSumApproach2([3, 2, 4], 6);
+  print(answer);
 }
 
 void printNewMessage() {
