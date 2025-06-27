@@ -3,3 +3,8 @@ export 'leetcode/two_sum_1.dart';
 export 'codeninja/star_pattern.dart';
 export 'dsa_concepts/array/array.dart';
 export 'dsa_concepts/string/strings.dart';
+export 'dsa_concepts/linked_list/linked_list.dart';
+export 'dsa_concepts/stack/stack.dart';
+export 'dsa_concepts/queue/queue.dart';
+export 'dsa_concepts/graph/graph.dart';
+export 'dsa_concepts/tree/tree.dart';
