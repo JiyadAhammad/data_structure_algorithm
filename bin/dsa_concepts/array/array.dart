@@ -86,3 +86,150 @@ int largesElement2(List<int> arr, int index) {
   // Time Complexcity = O(n)
   // Space Complexcity = O(n)
 }
+
+//! 4. Find the Smallest Element
+// Iterative
+void smallestElement1(List<int> arr) {
+  if (arr.isEmpty) {
+    return;
+  }
+
+  int smallest = arr[0];
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+
+  print(smallest);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(1)
+}
+
+// Recursive
+int smallestElement2(List<int> arr, int index) {
+  if (index == arr.length - 1) {
+    return arr[index];
+  }
+  int smallest = smallestElement2(arr, ++index);
+  return arr[index] < smallest ? arr[index] : smallest;
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+//! 5. Reverse the Array
+// Inbuild reverse method
+void reverseArray1(List<int> arr) {
+  print(arr);
+  final reversed = arr.reversed;
+  print(reversed);
+}
+
+// iterative method
+// using copyArray
+void reverseArray2(List<int> arr) {
+  print(arr);
+  List<int> copyArray = [];
+
+  for (int i = arr.length - 1; i >= 0; i--) {
+    copyArray.add(arr[i]);
+  }
+
+  print(copyArray);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+// Two pointer approach
+void reverseArray3(List<int> arr) {
+  print(arr);
+
+  /*
+    [10, 2, 13, 4] 4
+    it 1,
+    start =0
+    end = 3
+    temp =4;
+    a[3] = 10
+    a[0] = 4;
+
+    [4,2,13,10]
+
+    it 2,
+    start =1
+    end = 2
+    temp =13;
+    a[2] = 2
+    a[1] = 13;
+
+    [4,13,2,10]
+
+    it 3,
+    start =2
+    end = 1
+    temp =13;
+    a[2] = 2
+    a[1] = 13;
+  */
+
+  int start = 0;
+  int end = arr.length - 1;
+
+  while (start < end) {
+    int temp = arr[end];
+    arr[end] = arr[start];
+    arr[start] = temp;
+    ++start;
+    --end;
+  }
+
+  print(arr);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(1)
+}
+
+// Recursive
+void reverseArray4(List<int> arr) {
+  print(arr);
+  reverseRecursion(arr, 0, arr.length - 1);
+
+  print(arr);
+}
+
+void reverseRecursion(List<int> arr, int start, int end) {
+  if (start >= end) return;
+
+  int temp = arr[start];
+  arr[start] = arr[end];
+  arr[end] = temp;
+
+  reverseRecursion(arr, ++start, --end);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+// Using Stack
+void reverseArray5(List<int> arr) {
+  List<int> stack = [];
+
+  for (var e in arr) {
+    stack.add(e);
+  }
+
+  print(stack);
+
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = stack.removeLast();
+  }
+
+  print(arr);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
