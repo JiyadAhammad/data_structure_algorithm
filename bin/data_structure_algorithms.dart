@@ -2,7 +2,7 @@ import 'imports.dart';
 
 void main() {
   // final answer =
-  reverseArray5([10, 2, 13, 4]);
+  rotateArrayLeft2([10, 2, 13, 4, 4, 4, 13]);
   // print(answer);
 }
 

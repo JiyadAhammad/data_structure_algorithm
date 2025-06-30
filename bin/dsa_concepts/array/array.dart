@@ -233,3 +233,164 @@ void reverseArray5(List<int> arr) {
   // Time Complexcity = O(n)
   // Space Complexcity = O(n)
 }
+
+//! 6. Count Even and Odd Numbers
+// Iterative
+void countEvenAndOdd1(List<int> arr) {
+  int evenCount = 0;
+  int oddCount = 0;
+
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {
+      ++evenCount;
+    } else {
+      ++oddCount;
+    }
+  }
+
+  print('$evenCount  ,  $oddCount');
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(1)
+}
+
+// Recursive
+void countEvenAndOdd2(List<int> arr) {
+  int index = 0;
+  int evenCount = 0;
+  int oddCount = 0;
+  final res = countEvenAndOddRecursive(arr, index, evenCount, oddCount);
+
+  print(res);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+(int, int) countEvenAndOddRecursive(
+  List<int> arr,
+  int index,
+  int evenCount,
+  int oddCount,
+) {
+  if (arr.length == index) {
+    return (evenCount, oddCount);
+  }
+
+  if (arr[index] % 2 == 0) {
+    ++evenCount;
+  } else {
+    ++oddCount;
+  }
+
+  return countEvenAndOddRecursive(arr, ++index, evenCount, oddCount);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+//! 7. Copy One Array to Another
+void copyArray(List<int> arr) {
+  List<int> tempArr = [];
+
+  for (int i = 0; i < arr.length; i++) {
+    tempArr.add(arr[i]);
+  }
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+//! 8. Remove Duplicates from Array
+// using set
+void removeDuplicates1(List<int> arr) {
+  final result = arr.toSet();
+
+  print(result);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+// using copy array
+void removeDuplicates2(List<int> arr) {
+  print(arr);
+  List<int> tempArr = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    if (!tempArr.contains(arr[i])) {
+      tempArr.add(arr[i]);
+    }
+  }
+
+  print(tempArr);
+
+  // Time Complexcity = O(n2)
+  // Space Complexcity = O(n)
+}
+
+// HashMap
+void removeDuplicates3(List<int> arr) {
+  Map<int, int> frequencyMap = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (frequencyMap.containsKey(arr[i])) {
+      frequencyMap[arr[i]] = frequencyMap[arr[i]]! + 1;
+    } else {
+      frequencyMap[arr[i]] = 1;
+    }
+  }
+
+  final uniqueElement = [];
+
+  frequencyMap.forEach((key, value) {
+    uniqueElement.add(key);
+  });
+
+  print(uniqueElement);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
+}
+
+//! 9. Rotate Array to the Left by One
+/*
+  input:
+  [1, 2, 3, 4, 5]
+
+  Output:
+  [2, 3, 4, 5, 1]
+*/
+// Inbuild Method
+void rotateArrayLeft1(List<int> arr) {
+  print(arr);
+  if (arr.isEmpty) {
+    return;
+  }
+  int temp = arr[0];
+  arr.removeAt(0);
+  arr.add(temp);
+  print(arr);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(1)
+}
+
+void rotateArrayLeft2(List<int> arr) {
+  print(arr);
+  if (arr.isEmpty) {
+    return;
+  }
+  int temp = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    if (i == arr.length - 1) {
+      arr[i] = temp;
+      break;
+    }
+    arr[i] = arr[i + 1];
+  }
+
+  print(arr);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(1)
+}
