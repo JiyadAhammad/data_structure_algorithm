@@ -15,7 +15,6 @@
 import 'dart:io';
 
 //! 1. Print Elements of an Array
-
 void printElements(List<dynamic> arr) {
   for (var i = 0; i < arr.length; i++) {
     stdout.write(arr[i]);
@@ -375,6 +374,7 @@ void rotateArrayLeft1(List<int> arr) {
   // Space Complexcity = O(1)
 }
 
+// Iterative
 void rotateArrayLeft2(List<int> arr) {
   print(arr);
   if (arr.isEmpty) {
@@ -393,4 +393,44 @@ void rotateArrayLeft2(List<int> arr) {
 
   // Time Complexcity = O(n)
   // Space Complexcity = O(1)
+}
+
+//! 10. Count Frequency of Each Element
+// Iterative
+void frequencyCount1(List<int> arr) {
+  Map<int, int> frequencyMap = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (!frequencyMap.containsKey(arr[i])) {
+      frequencyMap[arr[i]] = 1;
+    } else {
+      continue;
+    }
+
+    for (int j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        frequencyMap[arr[i]] = frequencyMap[arr[i]]! + 1;
+      }
+    }
+  }
+  print(frequencyMap);
+
+  // Time Complexcity = O(n2)
+  // Space Complexcity = O(n)
+}
+
+// hashmap
+void frequencyCount2(List<int> arr) {
+  Map<int, int> frequencyMap = {};
+  for (int i = 0; i < arr.length; i++) {
+    if (!frequencyMap.containsKey(arr[i])) {
+      frequencyMap[arr[i]] = 1;
+    } else {
+      frequencyMap[arr[i]] = frequencyMap[arr[i]]! + 1;
+    }
+  }
+
+  print(frequencyMap);
+
+  // Time Complexcity = O(n)
+  // Space Complexcity = O(n)
 }

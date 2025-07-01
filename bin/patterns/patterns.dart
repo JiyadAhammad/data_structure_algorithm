@@ -16,3 +16,5 @@ void squarePattern(int n) {
     print('');
   }
 }
+
+

@@ -2,7 +2,7 @@ import 'imports.dart';
 
 void main() {
   // final answer =
-  rotateArrayLeft2([10, 2, 13, 4, 4, 4, 13]);
+  frequencyCount2([5, 5, 5, 5, 5]);
   // print(answer);
 }
 
