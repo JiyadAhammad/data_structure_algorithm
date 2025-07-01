@@ -2,7 +2,7 @@ import 'imports.dart';
 
 void main() {
   // final answer =
-  frequencyCount2([5, 5, 5, 5, 5]);
+  checkPalindrome3("helolleh");
   // print(answer);
 }
 
