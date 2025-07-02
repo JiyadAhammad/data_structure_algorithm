@@ -2,10 +2,10 @@ import 'imports.dart';
 
 void main() {
   // final answer =
-  checkPalindrome3("helolleh");
+  convertToCases("A E I O U");
   // print(answer);
 }
 
 void printNewMessage() {
-  print('Hellow world to dart programming');
+  print('Hello world to dart programming');
 }
