@@ -9,7 +9,7 @@
   7. Replace a Character ✅
   8. Find the Frequency of Each Character ✅
   9. Check if Two Strings Are Anagrams ✅
-  10. Remove Duplicate Characters
+  10. Remove Duplicate Characters ✅
 */
 
 import 'dart:io';
