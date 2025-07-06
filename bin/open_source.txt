@@ -1,0 +1,30 @@
+# Opens Source contribution Guide
+
+-> Choose your language  -> Flutter || Python
+-> Find project from github 
+-> Check the readMe.md file 
+-> Check the contributing.md file
+-> initally -> go to issues -> check "GOOD FIRST CONTRIBUTION"
+-> fixing error , building new feature , documenting
+-> Start the repository
+-> fork the repository 
+-> create your branch 
+-> Write your code in your branch
+-> push code into your branch
+-> Make a Pull Request to the main branch
+-> Respect the feedback of the maintainers
+
+/// Flutter Open source projects 
+# https://github.com/fluttergems/awesome-open-source-flutter-apps
+  // In the above repostory have multiple open source project in flutter 
+
+1. 
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.

@@ -2,7 +2,7 @@ import 'imports.dart';
 
 void main() {
   // final answer =
-  checkAnagram2("listei", 'silent');
+  removeDuplicate1("abcabcabc");
   // print(answer);
 }
 

@@ -8,7 +8,7 @@
   6. Remove All Whitespaces ✅
   7. Replace a Character ✅
   8. Find the Frequency of Each Character ✅
-  9. Check if Two Strings Are Anagrams
+  9. Check if Two Strings Are Anagrams ✅
   10. Remove Duplicate Characters
 */
 
@@ -311,10 +311,42 @@ void checkAnagram2(String str1, String str2) {
   //   print('Execution');
   //   if (value != 0) {
   //     print('Not anagram strings');
-  //     return; # return onnly skip current iteration inf foreach
+  //     return; # return onnly skip current iteration in foreach
   //   }
   // });
 
   print('Anagram');
   return;
+
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
+}
+
+//! 10. Remove Duplicate Characters
+/*
+  Input: "flutter"
+  Output: "fluter" # dublicate t removed
+*/
+
+void removeDuplicate1(String str) {
+  String temp = '';
+
+  for (var i = 0; i < str.length; i++) {
+    if (temp.contains(str[i])) {
+      continue;
+    }
+    temp += str[i];
+  }
+
+  print(temp);
+}
+
+void removeDuplicate2(String str) {
+  Set newSet = {};
+
+  for (var i = 0; i < str.length; i++) {
+    newSet.add(str[i]);
+  }
+
+  str = newSet.join();
 }
