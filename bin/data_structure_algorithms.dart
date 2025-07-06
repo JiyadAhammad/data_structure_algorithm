@@ -2,7 +2,7 @@ import 'imports.dart';
 
 void main() {
   // final answer =
-  convertToCases("A E I O U");
+  checkAnagram2("listei", 'silent');
   // print(answer);
 }
 
