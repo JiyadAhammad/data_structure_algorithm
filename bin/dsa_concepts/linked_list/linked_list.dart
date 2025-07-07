@@ -1,7 +1,7 @@
 /*
-  1. Traverse a Linked List
-  2. Insert a Node at the Beginning
-  3. Insert a Node at the End
+  1. Traverse a Linked List ✅
+  2. Insert a Node at the Beginning ✅
+  3. Insert a Node at the End ✅
   4. Insert a Node at a Specific Position
   5. Delete a Node by Value
   6. Delete a Node at a Specific Position
@@ -13,8 +13,119 @@
   12. Check if the Linked List is a Palindrome
 */
 
+// Learning section
+/*
+  Not in contidious location
+  Data and not to link to the next element
+  head = Start node , tail = last node
+*/
+
 import 'dart:io';
 
+class Node {
+  final int data;
+  Node? next;
+
+  Node({required this.data, this.next});
+}
+
+// 10 ->
+void createLinkedList() {
+  final node = LinkedList();
+
+  // Create Linked list
+  node.addData(20);
+  node.addData(30);
+  node.addData(40);
+  // Insert at begining
+  node.insertAtBeginning(10);
+  // Insert at the end
+  node.insertAtEnd1(50);
+  node.insertAtEnd2(60);
+  // Travel of Linked list
+  node.traverseLinkedList();
+}
+
+class LinkedList {
+  Node? head;
+  Node? tail;
+
+  void addData(int data) {
+    Node newNode = Node(data: data);
+    if (head == null) {
+      head = newNode;
+    } else {
+      tail!.next = newNode;
+    }
+    tail = newNode;
+  }
+
+  //! 1. Traverse a Linked List
+  void traverseLinkedList() {
+    Node? current = head;
+
+    while (current != null) {
+      stdout.write('${current.data} -> ');
+      current = current.next;
+    }
+    stdout.write('null');
+
+    // Time Complexcity = O(n)
+    // Space Complexcity = O(1)
+  }
+
+  //! 2. Insert a Node at the Beginning
+  void insertAtBeginning(int data) {
+    Node newNode = Node(data: data);
+    newNode.next = head;
+    if (head == null) {
+      tail = head = newNode;
+    } else {
+      head = newNode;
+    }
+    // Time Complexcity = O(1)
+    // Space Complexcity = O(1)
+  }
+
+  //! 3. Insert a Node at the End
+  // Keep tail to add new data
+  void insertAtEnd1(int data) {
+    Node newNode = Node(data: data);
+    // 10 -> 20 -> 30 -> 40 -> null
+    if (head == null) {
+      head = tail = newNode;
+    } else {
+      tail!.next = newNode;
+      tail = newNode;
+    }
+    // Time Complexcity = O(1)
+    // Space Complexcity = O(1)
+  }
+
+  // if not keeping tail
+  void insertAtEnd2(int data) {
+    Node newNode = Node(data: data);
+    if (head == null) {
+      head = newNode;
+      return;
+    }
+    Node? current = head;
+    while (current!.next != null) {
+      current = current.next;
+    }
+    current.next = newNode;
+
+    // Time Complexcity = O(n)
+    // Space Complexcity = O(1)
+  }
+}
+
+
+
+
+
+
+/*
 class Node {
   final int data;
   Node? next;
@@ -27,13 +138,23 @@ class Node {
   10 -> 20 -> 30 -> 40 -> null
 */
 void traverseLinkedList(Node? head) {
-  final newNode = insertAtBeginning(50, head);
+  final newNode = insertAtBeginning(5, head);
+  // final lastNode = insertAtEnd(50, head);
 
   Node? current = newNode;
   while (current != null) {
-    stdout.write('${current.data} -> ');
+    // stdout.write('${current.data} -> ');
     current = current.next;
   }
+  final lastNode = Node(data: 50);
+  if (current == null) {
+    current = newNode;
+    current!.next = null;
+  } else {
+    current.next = lastNode;
+    lastNode.next = null;
+  }
+
   stdout.write('Null');
 }
 
@@ -55,3 +176,23 @@ Node? insertAtBeginning(int data, Node? head) {
 
   return newNode;
 }
+
+//! 3. Insert a Node at the End
+/*
+  add 50 
+  10 -> 20 -> 30 -> 40 -> newNode -> null
+*/
+Node? insertAtEnd(int data, Node? head) {
+  Node? current = head;
+
+  Node? newNode;
+
+  if (current == null) {
+    newNode = Node(data: data);
+    current?.next = newNode;
+    newNode.next = null;
+  }
+
+  return newNode;
+}
+*/
