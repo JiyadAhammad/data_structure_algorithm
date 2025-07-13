@@ -2,7 +2,7 @@
   1. Traverse a Linked List ✅
   2. Insert a Node at the Beginning ✅
   3. Insert a Node at the End ✅
-  4. Insert a Node at a Specific Position
+  4. Insert a Node at a Specific Position ✅
   5. Delete a Node by Value
   6. Delete a Node at a Specific Position
   7. Search for an Element in the Linked List
@@ -11,12 +11,13 @@
   10. Find the Middle Element
   11. Detect a Loop in the Linked List
   12. Check if the Linked List is a Palindrome
+  13. Find The Lowest Value in a Linked List
 */
 
 // Learning section
 /*
   Not in contidious location
-  Data and not to link to the next element
+  Data and node to link to the next element
   head = Start node , tail = last node
 */
 
@@ -42,6 +43,8 @@ void createLinkedList() {
   // Insert at the end
   node.insertAtEnd1(50);
   node.insertAtEnd2(60);
+  // Insert at middle
+  node.insertAtMiddle(25, 10);
   // Travel of Linked list
   node.traverseLinkedList();
 }
@@ -117,6 +120,33 @@ class LinkedList {
 
     // Time Complexcity = O(n)
     // Space Complexcity = O(1)
+  }
+
+  //! 4. Insert a Node at a Specific Position
+  void insertAtMiddle(int data, int index) {
+    // 10 -> 20 -> {25} -> 30 -> 40 -> null
+    Node newNode = Node(data: data);
+    if (head == null) {
+      tail = head = newNode;
+    } else {
+      Node? current = head;
+      int count = 0;
+      while (current?.next != null) {
+        ++count;
+        if (count == index) {
+          break;
+        }
+        current = current?.next;
+      }
+
+      // If index is out of bounds
+      if (current == null) {
+        print("Index out of range");
+        return;
+      }
+      newNode.next = current.next;
+      current.next = newNode;
+    }
   }
 }
 
