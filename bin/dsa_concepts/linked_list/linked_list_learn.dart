@@ -13,16 +13,33 @@ void createLinkedListLearn() {
   learn.addDataToLinekedList(10);
   learn.addDataToLinekedList(20);
   learn.addDataToLinekedList(30);
+  learn.pushFront(5);
+  learn.pushFront(1);
   // learn.lowestValue();
   // learn.largest();
 
-  learn.deleteNode(LearnNode(data: 30));
+  // learn.deleteNode(LearnNode(data: 30));
   learn.printLinkedList();
 }
 
 class LinkedListLearn {
   LearnNode? head;
   LearnNode? tail;
+
+  /// Add new data to head
+  void pushFront(int val) {
+    LearnNode? newNode = LearnNode(data: val);
+
+    /// Case :1 if linked list is empty
+    if (head == null) {
+      head = tail = newNode;
+      return;
+    } else {
+      newNode.next = head;
+      head = newNode;
+    }
+  }
+
   void addDataToLinekedList(int data) {
     LearnNode newNode = LearnNode(data: data);
     if (head == null) {

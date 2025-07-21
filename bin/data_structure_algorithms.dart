@@ -3,7 +3,7 @@ import 'imports.dart';
 void main() {
   // Create nodes
 
-  pascalsTriangle(4);
+  createLinkedListLearn();
 }
 
 void printNewMessage() {
