@@ -44,8 +44,10 @@ void createLinkedList() {
   node.insertAtEnd1(50);
   node.insertAtEnd2(60);
   // Insert at middle
-  node.insertAtMiddle(25, 10);
-  // Travel of Linked list
+
+  node.traverseLinkedList();
+  node.deleteNodeByValue(40); // Travel of Linked list
+
   node.traverseLinkedList();
 }
 
@@ -123,7 +125,7 @@ class LinkedList {
   }
 
   //! 4. Insert a Node at a Specific Position
-  void insertAtMiddle(int data, int index) {
+  void insertAtMiddle1(int data, int index) {
     // 10 -> 20 -> {25} -> 30 -> 40 -> null
     Node newNode = Node(data: data);
     if (head == null) {
@@ -147,6 +149,72 @@ class LinkedList {
       newNode.next = current.next;
       current.next = newNode;
     }
+  }
+
+  void insertAtMiddle2(int data, int index) {
+    if (index < 0) {
+      // no range , invalid index
+      print('Invalid range entered');
+      return;
+    }
+    if (index == 0) {
+      // Implement pushFront here
+      return;
+    }
+
+    Node? current = head;
+    for (int i = 0; i < index - 1; i++) {
+      current = current?.next;
+    }
+
+    if (current?.next == null) {
+      print('out of bound');
+
+      // we can impment a pushBack case here
+      return;
+    }
+    Node newNode = Node(data: data);
+
+    newNode.next = current!.next;
+    current.next = newNode;
+
+    // Time Complexcity = O(n)
+    // Space Complexcity = O(1)
+  }
+
+  void deleteNodeByValue(int data) {
+    if (head == null) {
+      // Linked list is empty
+      return;
+    }
+
+    if (head!.data == data) {
+      // Current node is head then remove it and move to next else null
+      head = head!.next;
+      return;
+    }
+
+    Node? current = head;
+    Node? temp;
+
+    while (current != null) {
+      if (current.data == data) {
+        break;
+      }
+      temp = current;
+      current = current.next;
+    }
+
+    if (current == null) {
+      // no data found
+      print('no data found');
+      return;
+    }
+
+    temp?.next = temp.next?.next;
+
+    // Time Complexcity = O(n)
+    // Space Complexcity = O(1)
   }
 }
 

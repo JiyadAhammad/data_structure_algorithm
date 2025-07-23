@@ -3,7 +3,7 @@ import 'imports.dart';
 void main() {
   // Create nodes
 
-  createLinkedListLearn();
+  createLinkedList();
 }
 
 void printNewMessage() {
