@@ -3,12 +3,12 @@
   2. Insert a Node at the Beginning ✅
   3. Insert a Node at the End ✅
   4. Insert a Node at a Specific Position ✅
-  5. Delete a Node by Value
-  6. Delete a Node at a Specific Position
-  7. Search for an Element in the Linked List
-  8. Reverse a Linked List
-  9. Find the Length of the Linked List
-  10. Find the Middle Element
+  5. Delete a Node by Value ✅
+  6. Delete a Node at a Specific Position ✅
+  7. Search for an Element in the Linked List ✅
+  8. Reverse a Linked List ✅
+  9. Find the Length of the Linked List ✅
+  10. Find the Middle Element ✅
   11. Detect a Loop in the Linked List
   12. Check if the Linked List is a Palindrome
   13. Find The Lowest Value in a Linked List
@@ -46,7 +46,9 @@ void createLinkedList() {
   // Insert at middle
 
   node.traverseLinkedList();
-  node.deleteNodeByValue(40); // Travel of Linked list
+
+  // node.deleteNodeByValue(40);
+  node.middleElement2(); // Travel of Linked list
 
   node.traverseLinkedList();
 }
@@ -74,7 +76,7 @@ class LinkedList {
       current = current.next;
     }
     stdout.write('null');
-
+    print('');
     // Time Complexcity = O(n)
     // Space Complexcity = O(1)
   }
@@ -182,6 +184,7 @@ class LinkedList {
     // Space Complexcity = O(1)
   }
 
+  //! 5. Delete a Node by Value
   void deleteNodeByValue(int data) {
     if (head == null) {
       // Linked list is empty
@@ -215,6 +218,136 @@ class LinkedList {
 
     // Time Complexcity = O(n)
     // Space Complexcity = O(1)
+  }
+
+  //! 6. Delete a Node at a Specific Position
+  void deleteNodeByPosition(int pos) {
+    if (head == null) {
+      // linked list is empty
+      return;
+    }
+    if (pos < 0) {
+      // Invalid position
+      return;
+    }
+    if (pos == 0) {
+      // implment popback
+      return;
+    }
+
+    Node? current = head!;
+    for (var i = 0; i < pos - 1; i++) {
+      if (current == null) {
+        break;
+      }
+      current = current.next;
+    }
+
+    if (current == null) {
+      // out of bound
+      return;
+    }
+
+    current.next = current.next?.next;
+
+    // Time Complexcity = O(n)
+    // Space Complexcity = O(1)
+  }
+
+  //! 7. Search for an Element in the Linked List
+  void searchElement(int data) {
+    if (head == null) {
+      // linked list empty
+      return;
+    }
+
+    Node? current = head;
+    int pos = 0;
+    while (current != null) {
+      if (current.data == data) {
+        print('$data. found at $pos');
+        return;
+      }
+      pos++;
+      current = current.next;
+    }
+
+    // Time complexcity 0(n)
+    // Space complexcity 0(1)
+  }
+
+  //! 8. Reverse a Linked List
+  void reverseLinkedList() {
+    if (head == null) {
+      // linked list empty
+      return;
+    }
+
+    Node? prev;
+    Node? current = head;
+    Node? next;
+
+    while (current != null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    head = prev;
+
+    // Time complexcity 0(n)
+    // Space complexcity 0(1)
+  }
+
+  //! 9. Find the Length of the Linked List
+  void lengthLinkedList() {
+    int pos = 0;
+    Node? current = head;
+
+    while (current != null) {
+      pos++;
+      current = current.next;
+    }
+    print('length of linked list = $pos');
+
+    // Time complexcity 0(n)
+    // Space complexcity 0(1)
+  }
+
+  //! Find the Middle Element
+  void middleElement1() {
+    int pos = 0;
+
+    Node? current = head;
+
+    while (current != null) {
+      pos++;
+      current = current.next;
+    }
+
+    int middle = pos ~/ 2;
+    current = head;
+    for (var i = 0; i < middle; i++) {
+      current = current!.next;
+    }
+
+    print('Middle is ${current!.data}');
+
+    // Time complexcity 0(2n)
+    // Space complexcity 0(1)
+  }
+
+  // Slow-Fast Appraoch // Two pointer
+  void middleElement2() {
+    Node? slow = head;
+    Node? fast = head;
+
+    while (fast != null && fast.next != null) {
+      slow = slow!.next;
+      fast = fast.next!.next;
+    }
+
+    print('Middle is ${slow!.data}');
   }
 }
 
