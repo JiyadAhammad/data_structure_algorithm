@@ -9,7 +9,7 @@
   8. Reverse a Linked List ✅
   9. Find the Length of the Linked List ✅
   10. Find the Middle Element ✅
-  11. Detect a Loop in the Linked List
+  11. Detect a Loop in the Linked List ✅ find start node ✅ Remove cycle ✅
   12. Check if the Linked List is a Palindrome
   13. Find The Lowest Value in a Linked List
 */
@@ -45,12 +45,14 @@ void createLinkedList() {
   node.insertAtEnd2(60);
   // Insert at middle
 
+  node.findStartNode();
+
   node.traverseLinkedList();
 
   // node.deleteNodeByValue(40);
-  node.middleElement2(); // Travel of Linked list
+  // node.middleElement2(); // Travel of Linked list
 
-  node.traverseLinkedList();
+  // node.traverseLinkedList();
 }
 
 class LinkedList {
@@ -348,6 +350,95 @@ class LinkedList {
     }
 
     print('Middle is ${slow!.data}');
+    // Time complexcity 0(n)
+    // Space complexcity 0(1)
+  }
+
+  //! 11. Detect a Loop in the Linked List
+  //slow-fast appraoch
+  void detectCycle() {
+    // 1-> 2-> 3-> 4-> 5-> 3-> 4-> ...
+    Node? slow = head;
+    Node? fast = head;
+
+    while (fast != null && fast.next != null) {
+      slow = slow!.next;
+      fast = fast.next!.next;
+
+      if (slow == fast) {
+        print('Cycle detected');
+        return;
+      }
+    }
+
+    print('No cycle detected');
+
+    // Time complexcity 0(n)
+    // Space complexcity 0(1)
+  }
+
+  // Start node of a cycle
+  void findStartNode() {
+    Node? slow = head;
+    Node? fast = head;
+    bool isCycle = false;
+
+    while (fast != null && fast.next != null) {
+      slow = slow!.next;
+      fast = fast.next!.next;
+
+      if (slow == fast) {
+        isCycle = true;
+        break;
+      }
+    }
+
+    if (!isCycle) {
+      // there is no cycle
+      return;
+    }
+
+    slow = head;
+    while (slow != fast) {
+      slow = slow!.next;
+      fast = fast!.next;
+    }
+
+    print('${slow!.data} is the start of cycle');
+  }
+
+  // Remove cycle
+  void removeCycle() {
+    Node? slow = head;
+    Node? fast = head;
+    bool isCycle = false;
+
+    while (fast != null && fast.next != null) {
+      slow = slow!.next;
+      fast = fast.next!.next;
+      if (slow == fast) {
+        isCycle = true;
+        break;
+      }
+    }
+
+    if (!isCycle) {
+      // NO cycle found
+      return;
+    }
+
+    slow = head;
+    Node? prev;
+
+    while (slow != fast) {
+      slow = slow!.next;
+      prev = fast;
+      fast = fast!.next;
+    }
+
+    print('${prev!.data} last node');
+
+    prev = null;
   }
 }
 
