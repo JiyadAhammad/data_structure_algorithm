@@ -1,9 +1,9 @@
 import 'imports.dart';
 
 void main() {
-  // Create nodes
+  // ({[)]}
 
-  createLinkedList();
+  reverseStack([1, 2, 3, 4, 5]);
 }
 
 void printNewMessage() {

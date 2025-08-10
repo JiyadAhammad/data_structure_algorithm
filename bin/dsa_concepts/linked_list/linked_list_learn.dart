@@ -221,4 +221,73 @@ class LinkedListLearn {
       current = current.next;
     }
   }
+
+  // Merge two sorted list
+
+  /*
+    Give Two sorted list 
+
+    1. 1-> 2-> 3-> null
+    2. 3-> 4-> 5-> null
+
+    op 1-> 2-> 3-> 3-> 4-> 5-> null
+
+    we will get:
+    h1 = head of first list
+    h2 = head of second list
+
+    using recursive function
+  */
+
+  /// Recursive
+  LearnNode? mergeTwoLists(LearnNode? list1, LearnNode? list2) {
+    if (list1 == null) {
+      return list2;
+    } else if (list2 == null) {
+      return list1;
+    }
+    if (list1.data <= list2.data) {
+      list1.next = mergeTwoLists(list1.next, list2);
+
+      return list1;
+    } else {
+      list2.next = mergeTwoLists(list1, list2.next);
+
+      return list2;
+    }
+  }
+
+  /// Iterative
+  LearnNode? mergeTwoLists2(LearnNode? list1, LearnNode? list2) {
+    if (list1 == null) {
+      return list2;
+    } else if (list2 == null) {
+      return list1;
+    }
+
+    LearnNode? current1 = list1;
+    LearnNode? current2 = list2;
+
+    List<LearnNode?> sortedList = [];
+
+    while (current1 != null || current2 != null) {
+      if (current1?.next == null) {
+        sortedList.add(current2);
+        current2 = current2?.next;
+      } else if (current2?.next == null) {
+        sortedList.add(current1);
+        current1 = current1?.next;
+      } else {
+        if (current1!.data <= current2!.data) {
+          sortedList.add(current1);
+          current1 = current1.next;
+        } else {
+          sortedList.add(current2);
+          current2 = current2.next;
+        }
+      }
+    }
+
+    return sortedList[0];
+  }
 }

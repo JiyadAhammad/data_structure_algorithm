@@ -37,15 +37,15 @@ void createLinkedList() {
   // Create Linked list
   node.addData(20);
   node.addData(30);
-  node.addData(40);
+  // node.addData(30);
   // Insert at begining
   node.insertAtBeginning(10);
   // Insert at the end
-  node.insertAtEnd1(50);
-  node.insertAtEnd2(60);
+  node.insertAtEnd1(20);
+  node.insertAtEnd2(10);
   // Insert at middle
-
-  node.findStartNode();
+  node.traverseLinkedList();
+  node.checkPalindrome2();
 
   node.traverseLinkedList();
 
@@ -405,6 +405,9 @@ class LinkedList {
     }
 
     print('${slow!.data} is the start of cycle');
+
+    // Time complexcity 0(2n)
+    // Space complexcity 0(1)
   }
 
   // Remove cycle
@@ -439,6 +442,71 @@ class LinkedList {
     print('${prev!.data} last node');
 
     prev = null;
+
+    // Time complexcity 0(2n)
+    // Space complexcity 0(1)
+  }
+
+  //! 12. Check if the Linked List is a Palindrome
+  void checkPalindrome() {
+    List<int> stack = [];
+
+    Node? current = head;
+
+    while (current != null) {
+      stack.add(current.data);
+      current = current.next;
+    }
+
+    current = head;
+
+    while (current != null) {
+      if (current.data != stack.last) {
+        print('Not a palindrom');
+        return;
+      }
+
+      current = current.next;
+      stack.removeLast();
+    }
+
+    print('Palindrome');
+
+    // Time complexcity 0(2n)
+    // Space complexcity 0(n) -> took a new list of stack
+  }
+
+  // implementing without extra space
+  void checkPalindrome2() {
+    /// Two pointer appraoch
+    // 1. find the middle
+    // 2. reverse the second half
+    // 3. compare with first and second half
+    // 4. rereverse once opration done
+    // 5. return true or false based on match
+
+    Node? slow = head;
+    Node? fast = head;
+
+    while (fast!.next != null && fast.next!.next != null) {
+      slow = slow!.next;
+      fast = fast.next!.next;
+    }
+
+    Node? next;
+    Node? currentHead = slow!.next;
+    Node? prev;
+    slow.next = null;
+
+    while (currentHead != null) {
+      next = currentHead.next;
+      currentHead.next = prev;
+
+      prev = currentHead;
+      currentHead = next;
+    }
+
+    slow.next = prev;
   }
 }
 
