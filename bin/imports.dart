@@ -9,3 +9,7 @@ export 'dsa_concepts/queue/queue.dart';
 export 'dsa_concepts/graph/graph.dart';
 export 'dsa_concepts/tree/tree.dart';
 export 'dsa_concepts/linked_list/linked_list_learn.dart';
+export 'interview/remove_dublicates.dart';
+export 'interview/find_missing_positive_integer.dart';
+export 'interview/anagram.dart';
+export 'interview/palindrome.dart';

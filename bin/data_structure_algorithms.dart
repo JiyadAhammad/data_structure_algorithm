@@ -3,7 +3,8 @@ import 'imports.dart';
 void main() {
   // ({[)]}
 
-  reverseStack([1, 2, 3, 4, 5]);
+  // reverseStack([1, 2, 3, 4, 5]);
+  palindromeT("ardfafdra");
 }
 
 void printNewMessage() {
