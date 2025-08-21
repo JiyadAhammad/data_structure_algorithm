@@ -69,56 +69,17 @@ void pascalsTriangle(int n) {
     1 4 6 4 1
   */
 
-  List<List<int>> triangle = [];
+  List<List<int>> triangle = [
+    [1],
+    [1, 1],
+    [1, 2, 1],
+    [1, 3, 3, 1],
+    [1, 4, 6, 4, 1],
+  ];
 
   for (var i = 1; i <= n; i++) {
     for (int j = 1; j <= n; j++) {
       if (j == 0) {}
     }
-  }
-}
-
-void xPattern(int n) {
-  /*
-    XXXX
-    XXX      i = 1 , 7  4,3
-    X
-    X.       i = 1 , 2  1,1
-
-    XXX
-    XX       i = 2 , 5  3,2
-    X
-    X        i = 1 , 2  1,1
-
-    XX
-    X        i = 3 , 3  2,1
-   
-     userInput =  3 
-
-     first assumption.  3*2+1 = 7
-  */
-
-  int pv = (n * 2 + 1);
-  int nl = n + 1;
-
-  for (var i = 1; i <= n; i++) {
-    for (var j = 1; j <= pv; j++) {
-      stdout.write('X');
-      if (j == nl) {
-        print('');
-      }
-    }
-    print('');
-    if (i == n) {
-      break;
-    }
-    for (var k = 1; k <= 2; k++) {
-      stdout.write('X');
-
-      print('');
-    }
-    pv = pv - 2;
-    nl = nl - 1;
-    print('');
   }
 }
