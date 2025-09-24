@@ -26,9 +26,9 @@ List<int> twoSumApproach1(List<int> nums, int target) {
   return [];
 
   /*
-    Complexcity analysis 
-    Time Complexcity = O(n2)
-    Space Complexcity = O(1)
+    Complexity analysis 
+    Time Complexity = O(n2)
+    Space Complexity = O(1)
   */
 }
 
@@ -52,8 +52,8 @@ List<int> twoSumApproach2(List<int> nums, int target) {
   return [];
 
   /*
-    Complexcity analysis 
-    Time Complexcity = O(n)
-    Space Complexcity = O(n)
+    Complexity analysis 
+    Time Complexity = O(n)
+    Space Complexity = O(n)
   */
 }
