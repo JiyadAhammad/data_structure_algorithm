@@ -49,4 +49,10 @@ int removeElement2(List<int> nums, int val) {
     }
   }
   return j;
+
+  /*
+    Complexity analysis 
+    Time Complexity = O(n)
+    Space Complexity = O(1)
+  */
 }

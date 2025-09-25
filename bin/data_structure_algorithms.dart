@@ -1,7 +1,9 @@
-void main() {
-  // ({[)]}
+import 'dart:async';
 
-  // reverseStack([1, 2, 3, 4, 5]);
+import 'imports.dart';
+
+void main() {
+  nApTerm1(2, 3, 4);
 }
 
 void printNewMessage() {
@@ -24,4 +26,11 @@ class Animal {
   final String name;
 
   const Animal(this.name);
+}
+
+void main1() {
+  print('start');
+  Future(() => print('Future printed'));
+  scheduleMicrotask(() => print('Micro task print'));
+  print('end');
 }
