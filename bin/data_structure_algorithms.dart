@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  nApTerm1(2, 3, 4);
+  arrayIsSorted([5, 4, 6, 7, 8]);
 }
 
 void printNewMessage() {
