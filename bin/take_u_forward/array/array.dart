@@ -130,3 +130,140 @@ void arrayIsSorted(List<int> arr) {
   // Time complexity = O(n)
   // Space complexity = O(1)
 }
+
+//! Remove Duplicates in-place from Sorted Array
+/*
+    Example 1: 
+    Input: arr[1,1,2,2,2,3,3]
+    Output: arr[1,2,3,_,_,_,_]
+    Explanation: Total number of unique elements are 3, i.e[1,2,3] and 
+    Therefore return 3 after assigning [1,2,3] in the beginning of the array.
+
+    Example 2: 
+    Input: arr[1,1,1,2,2,3,3,3,3,4,4]
+    Output: arr[1,2,3,4,_,_,_,_,_,_,_]
+    Explanation: Total number of unique elements are 4, i.e[1,2,3,4] and 
+    Therefore return 4 after assigning [1,2,3,4] in the beginning of the array.
+*/
+
+void removeDuplicatesSA(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  for (var i = 0; i < arr.length - 1; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        arr.removeAt(j);
+        j--;
+      } else {
+        break;
+      }
+    }
+  }
+
+  print(arr);
+
+  // Time complexity = O(n2)
+  // Space complexity = O(1)
+}
+
+void removeDuplicatesSA1(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  for (var i = 0; i < arr.length - 1; i++) {
+    int j = i + 1;
+    if (arr[i] == arr[j]) {
+      arr.removeAt(j);
+      i--;
+    }
+  }
+
+  print(arr);
+
+  // Time complexity = O(n)
+  // Space complexity = O(1)
+}
+
+void removeDuplicatesSA2(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  final newSet = arr.toSet().toList();
+
+  print(newSet);
+
+  // Time complexity = O(n)
+  // Space complexity = O(k)
+}
+
+void removeDuplicatesSA3(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  int j = 0;
+
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] != arr[j]) {
+      j++;
+      arr[j] = arr[i];
+    }
+  }
+
+  print('$j  $arr');
+
+  // Time complexity = O(n)
+  // Space complexity = O(1)
+}
+
+//! Left Rotate the Array by One
+/*
+    Example 1:
+    Input: N = 5, array[] = {1,2,3,4,5}
+    Output: 2,3,4,5,1
+    Explanation: 
+    Since all the elements in array will be shifted 
+    toward left by one so ‘2’ will now become the 
+    first index and and ‘1’ which was present at 
+    first index will be shifted at last.
+
+
+    Example 2:
+    Input: N = 1, array[] = {3}
+    Output: 3
+    Explanation: Here only element is present and so 
+    the element at first index will be shifted to 
+    last index which is also by the way the first index.
+*/
+
+void rotateOne(List<int> arr) {
+  if (arr.isEmpty) {
+    print('List is Empty');
+    return;
+  }
+  if (arr.length == 1) {
+    print(arr);
+    return;
+  }
+
+  int temp = arr[0];
+
+  for (var i = 1; i < arr.length; i++) {
+    arr[i - 1] = arr[i];
+  }
+
+  arr[arr.length - 1] = temp;
+
+  print(arr);
+
+  // Time complexity = O(n)
+  // Space complexity = O(1)
+}

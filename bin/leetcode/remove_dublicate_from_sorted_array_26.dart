@@ -35,3 +35,67 @@ int removeDuplicates(List<int> nums) {
     Space Complexity = O(1)
   */
 }
+
+void removeDuplicatesSA(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  for (var i = 0; i < arr.length - 1; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        arr.removeAt(j);
+        j--;
+      } else {
+        break;
+      }
+    }
+  }
+
+  print(arr);
+
+  // Time complexity = O(n2)
+  // Space complexity = O(1)
+}
+
+void removeDuplicatesSA1(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  for (var i = 0; i < arr.length - 1; i++) {
+    int j = i + 1;
+    if (arr[i] == arr[j]) {
+      arr.removeAt(j);
+      i--;
+    }
+  }
+
+  print(arr);
+
+  // Time complexity = O(n)
+  // Space complexity = O(1)
+}
+
+void removeDuplicatesSA3(List<int> arr) {
+  if (arr.isEmpty) {
+    print('Array is empty');
+    return;
+  }
+
+  int j = 0;
+
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] != arr[j]) {
+      j++;
+      arr[j] = arr[i];
+    }
+  }
+
+  print('$j  $arr');
+
+  // Time complexity = O(n)
+  // Space complexity = O(1)
+}

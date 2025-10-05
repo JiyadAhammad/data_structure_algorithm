@@ -54,7 +54,7 @@ class Solution {
         continue;
       }
 
-      if (trackLastParanthesis(s[i], stack.last)) {
+      if (trackLastParenthesis(s[i], stack.last)) {
         stack.removeLast();
       } else {
         stack.add(s[i]);
@@ -64,7 +64,7 @@ class Solution {
     return stack.isEmpty;
   }
 
-  bool trackLastParanthesis(String current, String last) {
+  bool trackLastParenthesis(String current, String last) {
     switch (current) {
       case ')':
         return last == '(';

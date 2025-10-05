@@ -75,8 +75,8 @@ void reverseString(String val) {
   print(newString);
 }
 
-//! 6. Check for Balanced Parentheses
-void balancedParanthisis(String s) {
+//! 6. Check for Balanced Parenthesis
+void balancedParenthesis(String s) {
   /*
     Input 1:
     ({[]})
@@ -94,27 +94,27 @@ void balancedParanthisis(String s) {
     return;
   }
 
-  List<String> paranthisStack = [];
+  List<String> parenthesisStack = [];
   for (var i = 0; i < s.length; i++) {
-    if (paranthisStack.isEmpty) {
-      paranthisStack.add(s[i]);
+    if (parenthesisStack.isEmpty) {
+      parenthesisStack.add(s[i]);
       continue;
     }
 
-    if (lastPara(s[i], paranthisStack.last)) {
-      paranthisStack.removeLast();
+    if (lastPara(s[i], parenthesisStack.last)) {
+      parenthesisStack.removeLast();
     } else {
-      paranthisStack.add(s[i]);
+      parenthesisStack.add(s[i]);
     }
   }
 
-  if (paranthisStack.isEmpty) {
+  if (parenthesisStack.isEmpty) {
     print('Balanced');
   } else {
     print('Not Balanced');
   }
 
-  print('paranthisStack $paranthisStack');
+  print('parenthesisStack $parenthesisStack');
 
   // Time complexity = O(n)
   // Space complexity = O(n)

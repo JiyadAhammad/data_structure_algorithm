@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  arrayIsSorted([5, 4, 6, 7, 8]);
+  rotateOne([1, 2, 3, 4, 5]);
 }
 
 void printNewMessage() {
