@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  rotateOne([1, 2, 3, 4, 5]);
+  rotateKElement2([1, 2], 7);
 }
 
 void printNewMessage() {

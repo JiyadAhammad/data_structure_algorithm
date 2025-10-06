@@ -267,3 +267,104 @@ void rotateOne(List<int> arr) {
   // Time complexity = O(n)
   // Space complexity = O(1)
 }
+
+//! Rotate array by K elements
+/*
+    Problem Statement: Given an array of integers, 
+    rotating array of elements by k elements either left or right.
+
+    Example 1:
+    Input: N = 7, array[] = {1,2,3,4,5,6,7} , k=2 , right
+    Output: 6 7 1 2 3 4 5
+    Explanation: array is rotated to right by 2 position .
+
+    Example 2:
+    Input: N = 6, array[] = {3,7,8,9,10,11} , k=3 , left 
+    Output: 9 10 11 3 7 8
+    Explanation: Array is rotated to right by 3 position.
+*/
+
+// right rotate:
+void rotateKElement(List<int> arr, int k) {
+  if (arr.isEmpty) {
+    return;
+  }
+  for (var j = 0; j < k; j++) {
+    int temp = arr[arr.length - 1];
+    for (int i = arr.length - 1; i > 0; i--) {
+      arr[i] = arr[i - 1];
+    }
+    arr[0] = temp;
+  }
+  print(arr);
+
+  // Time complexity = O(n2)
+  // Space complexity = O(1)
+}
+
+void rotateKElement1(List<int> arr, int k) {
+  int totalRotation = k % arr.length;
+
+  print('$totalRotation total');
+
+  List<int> temp = [];
+  // 5  6-2 =4
+
+  for (var i = arr.length - totalRotation; i < arr.length; i++) {
+    temp.add(arr[i]);
+  }
+
+  //  {3,7,8,9,10,11}
+  //i = 6 -2-1 = 3 ,2,1,0
+  // arr =      7, 8 , 9
+
+  for (var i = arr.length - totalRotation - 1; i >= 0; i--) {
+    arr[i + totalRotation] = arr[i];
+  }
+
+  print(arr);
+
+  for (var i = 0; i < temp.length; i++) {
+    arr[i] = temp[i];
+  }
+
+  print(arr);
+
+  // Time complexity = O(n)
+  // Space complexity = O(k)
+}
+
+void rotateKElement2(List<int> arr, int k) {
+  if (arr.isEmpty) {
+    return;
+  }
+
+  int totalRotation = k % arr.length;
+
+  if (totalRotation == 0) {
+    return;
+  }
+  // Reverse whole array
+  rotateHelper(arr, 0, arr.length - 1);
+
+  // Reverse first k element
+  rotateHelper(arr, 0, totalRotation - 1);
+
+  // Reverse Remaining element
+  rotateHelper(arr, totalRotation, arr.length - 1);
+
+  print(arr);
+
+  // Time complexity = O(n)
+  // Space complexity = O(1)
+}
+
+void rotateHelper(List<int> arr, int start, int end) {
+  while (start < end) {
+    int temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+  }
+}
