@@ -368,3 +368,123 @@ void rotateHelper(List<int> arr, int start, int end) {
     end--;
   }
 }
+
+//! Move all Zeros to the end of the array
+/*
+    Example 1:
+    Input: 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
+    Output: 1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
+    Explanation: All the zeros are moved to the end and 
+    non-negative integers are moved to front by maintaining order
+
+    Example 2:
+    Input: 1,2,0,1,0,4,0
+    Output: 1,2,1,4,0,0,0
+    Explanation: All the zeros are moved to the end and 
+    non-negative integers are moved to front by maintaining order
+*/
+
+void moveZeros(List<int> arr) {
+  if (arr.isEmpty) {
+    return;
+  }
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      arr.removeAt(i);
+      arr.add(0);
+    }
+  }
+
+  print(arr);
+}
+
+void moveZeros1(List<int> arr) {
+  int pointNonZero = 0;
+
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] != 0) {
+      int temp = arr[i];
+      arr[i] = arr[pointNonZero];
+      arr[pointNonZero] = temp;
+      pointNonZero++;
+    }
+  }
+
+  print(arr);
+}
+
+//! Linear Search
+/*
+    Problem Statement: Given an array, and an element num the 
+    task is to find if num is present in the given array or not. 
+    If present print the index of the element or print -1.
+
+    Examples:
+
+    Example 1:
+    Input: arr[]= 1 2 3 4 5, num = 3
+    Output: 2
+    Explanation: 3 is present in the 2nd index
+
+    Example 2:
+    Input: arr[]= 5 4 3 2 1, num = 5
+    Output: 0
+    Explanation: 5 is present in the 0th index
+*/
+
+void linearSearch(List<int> arr, int t) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] == t) {
+      print(i);
+      return;
+    }
+  }
+  print(-1);
+}
+
+//! Union of Two Sorted Arrays
+/*
+    Example 1:
+    Input:
+    n = 5,m = 5.
+    arr1[] = {1,2,3,4,5}  
+    arr2[] = {2,3,4,4,5}
+    Output:
+    {1,2,3,4,5}
+
+    Explanation: 
+    Common Elements in arr1 and arr2  are:  2,3,4,5
+    Distinct Elements in arr1 are : 1
+    Distinct Elements in arr2 are : No distinct elements.
+    Union of arr1 and arr2 is {1,2,3,4,5} 
+
+    Example 2:
+    Input:
+    n = 10,m = 7.
+    arr1[] = {1,2,3,4,5,6,7,8,9,10}
+    arr2[] = {2,3,4,4,5,11,12}
+    Output: {1,2,3,4,5,6,7,8,9,10,11,12}
+    Explanation: 
+    Common Elements in arr1 and arr2  are:  2,3,4,5
+    Distinct Elements in arr1 are : 1,6,7,8,9,10
+    Distinct Elements in arr2 are : 11,12
+    Union of arr1 and arr2 is {1,2,3,4,5,6,7,8,9,10,11,12} 
+*/
+
+void unionFind(List<int> arr1, List<int> arr2) {
+  List<int> unionList = [];
+  for (var i = 0; i < arr1.length; i++) {
+    if (!unionList.contains(arr1[i])) {
+      unionList.add(arr1[i]);
+    }
+  }
+
+  for (var i = 0; i < arr2.length; i++) {
+    if (!unionList.contains(arr2[i])) {
+      unionList.add(arr2[i]);
+    }
+  }
+
+  print(unionList);
+}
