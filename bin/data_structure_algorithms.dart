@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  unionFind([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 4, 4, 5, 11, 12]);
+  selectionSort([13, 46, 24, 52, 20, 9]);
 }
 
 void printNewMessage() {

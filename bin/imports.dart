@@ -15,3 +15,4 @@ export 'interview/anagram.dart';
 export 'interview/palindrome.dart';
 export 'gfg/logic_building_problems/logic_building_questions.dart';
 export 'take_u_forward/array/array.dart';
+export 'dsa_concepts/sorting/selection_sort.dart';
