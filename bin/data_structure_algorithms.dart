@@ -3,7 +3,9 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  selectionSort([13, 46, 24, 52, 20, 9]);
+  final arr = [1, 2, 3, 4, 6];
+  final x = 6;
+  pairSumExist(arr, x);
 }
 
 void printNewMessage() {

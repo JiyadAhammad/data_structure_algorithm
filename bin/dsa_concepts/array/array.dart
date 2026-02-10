@@ -30,8 +30,8 @@ void sumOfElements1(List<int> arr) {
   }
   print(sum);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 // Base maths formula (Only for 1..n)
