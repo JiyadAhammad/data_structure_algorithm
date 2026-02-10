@@ -3,9 +3,8 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  final arr = [1, 2, 3, 4, 6];
-  final x = 6;
-  pairSumExist(arr, x);
+  final arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+  removeDuplicateInPlace(arr);
 }
 
 void printNewMessage() {
