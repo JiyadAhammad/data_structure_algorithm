@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  final result = twoSum([-1, 0], -1);
+  final result = isPalindrome("ab_a");
 
   print(result);
 }
