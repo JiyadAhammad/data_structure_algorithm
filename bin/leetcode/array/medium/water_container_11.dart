@@ -18,6 +18,8 @@
   Input: height = [1,1]
   Output: 1
 */
+import 'dart:math';
+
 int maxArea(List<int> height) {
   if (height.isEmpty) {
     return 0;
@@ -31,11 +33,13 @@ int maxArea(List<int> height) {
     int base = right - left;
     int minHeight = height[left] > height[right] ? height[right] : height[left];
 
-    int newArea = base * minHeight;
+    // int newArea = base * minHeight;
 
-    if (newArea > area) {
-      area = newArea;
-    }
+    // if (newArea > area) {
+    //   area = newArea;
+    // }
+
+    area = max(area, base * minHeight);
 
     if (height[left] > height[right]) {
       right--;
