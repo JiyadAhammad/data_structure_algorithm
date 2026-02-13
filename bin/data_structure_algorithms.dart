@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  final result = isPalindrome("ab_a");
+  final result = sortedSquares([-4,-1,0,3,10]);
 
   print(result);
 }
