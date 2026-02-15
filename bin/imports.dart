@@ -1,6 +1,7 @@
 export 'patterns/patterns.dart';
 export 'leetcode/array/easy/two_sum_1.dart';
 export 'leetcode/array/medium/two_sum_2_167.dart';
+export 'leetcode/array/medium/sort_color_75.dart';
 export 'leetcode/string/easy/valid_palindrome_125.dart';
 export 'leetcode/array/easy/squares_sorted_array_977.dart';
 export 'codeninja/star_pattern.dart';

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  final result = sortedSquares([-4,-1,0,3,10]);
+  final result = sortColors([1, 2, 0]);
 
   print(result);
 }
