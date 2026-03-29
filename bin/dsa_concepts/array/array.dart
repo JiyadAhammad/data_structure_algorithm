@@ -434,3 +434,20 @@ void frequencyCount2(List<int> arr) {
   // Time Complexcity = O(n)
   // Space Complexcity = O(n)
 }
+
+//! Adding more
+//! Move all zeros to end
+void moveZeros(List<int> arr) {
+  int pointNonZero = 0;
+
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] != 0) {
+      if (arr[i] != 0) {
+        int temp = arr[i];
+        arr[i] = arr[pointNonZero];
+        arr[pointNonZero] = temp;
+      }
+      pointNonZero++;
+    }
+  }
+}
