@@ -437,7 +437,7 @@ void frequencyCount2(List<int> arr) {
 
 //! Adding more
 //! Move all zeros to end
-void moveZeros(List<int> arr) {
+void moveZeros01(List<int> arr) {
   int pointNonZero = 0;
 
   for (int i = 0; i < arr.length; i++) {
@@ -450,4 +450,46 @@ void moveZeros(List<int> arr) {
       pointNonZero++;
     }
   }
+}
+
+//! Remove duplicates (sorted array)
+void removeDuplicates01(List<int> arr) {
+  arr.toSet().toList();
+}
+
+void removeDuplicates02(List<int> arr) {
+  List<int> nonDuplicate = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    if (!nonDuplicate.contains(arr[i])) {
+      nonDuplicate.add(arr[i]);
+    }
+  }
+}
+
+void removeDuplicates03(List<int> arr) {
+  Map<int, int> freqMap = {};
+
+  for (var i = 0; i < arr.length; i++) {
+    freqMap[arr[i]] = (freqMap[arr[i]] ?? 0) + 1;
+  }
+
+  List<int> nonDuplicate = [];
+
+  freqMap.forEach((key, value) {
+    nonDuplicate.add(key);
+  });
+}
+
+void removeDuplicates04(List<int> arr) {
+  int left = 0;
+
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] != arr[left]) {
+      left++;
+      arr[left] = arr[i];
+    }
+  }
+
+  arr.length = left + 1;
 }
