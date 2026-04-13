@@ -31,8 +31,8 @@ void reverseString1(String str) {
 
   print(temp);
 
-  // Time Complexcity = O(n2)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n2)
+  // Space Complexity = O(n)
 }
 
 // Inbuild method
@@ -40,8 +40,8 @@ void reverseString2(String str) {
   final result = str.split('').reversed.join('');
   print(result);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 2. Check if a String is a Palindrome
@@ -50,8 +50,8 @@ void checkPalindrome1(String str) {
   final result = str.split('').reversed.join('');
   print(result == str);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 // Iterative
@@ -64,8 +64,8 @@ void checkPalindrome2(String str) {
 
   print(temp == str);
 
-  // Time Complexcity = O(n2)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n2)
+  // Space Complexity = O(n)
 }
 
 // Two Pointer Approach
@@ -84,8 +84,8 @@ void checkPalindrome3(String str) {
 
   print('Palindrome');
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 //! 3. Count Vowels and Consonants
@@ -102,7 +102,7 @@ void checkPalindrome3(String str) {
 void vowelsConstantsCount(String str) {
   List<String> vowels = ['a', 'e', 'i', 'o', 'u'];
   int totalVowels = 0;
-  int totalConstatns = 0;
+  int totalConstants = 0;
   for (var i = 0; i < str.length; i++) {
     if (vowels.contains(str[i].toLowerCase())) {
       ++totalVowels;
@@ -110,14 +110,14 @@ void vowelsConstantsCount(String str) {
       if (str[i] == ' ') {
         continue;
       }
-      ++totalConstatns;
+      ++totalConstants;
     }
   }
 
-  print('Vowels = $totalVowels , Constants = $totalConstatns');
+  print('Vowels = $totalVowels , Constants = $totalConstants');
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 //! 4. Convert String to Lowercase / Uppercase
@@ -134,8 +134,8 @@ void convertToCases(String str) {
     print("Invalid input please enter 1 -> upper , 2 -> lower");
   }
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 //! 5. Count Number of Words

@@ -41,8 +41,8 @@ void sumOfElements2(List<int> arr) {
   int sum = len * (len + 1) ~/ 2;
   print(sum);
 
-  // Time Complexcity = O(1)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(1)
+  // Space Complexity = O(1)
 }
 
 // Recursive
@@ -52,8 +52,8 @@ int sumOfElements3(List<int> arr, int index) {
   }
   return arr[index] + sumOfElements3(arr, ++index);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 3. Find the Largest Element
@@ -70,8 +70,8 @@ void largesElement1(List<int> arr) {
   }
   print(largesElement);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 // Recursive
@@ -82,8 +82,8 @@ int largesElement2(List<int> arr, int index) {
   int largesElement = largesElement2(arr, ++index);
   return arr[index] > largesElement ? arr[index] : largesElement;
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 4. Find the Smallest Element
@@ -103,8 +103,8 @@ void smallestElement1(List<int> arr) {
 
   print(smallest);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 // Recursive
@@ -115,8 +115,8 @@ int smallestElement2(List<int> arr, int index) {
   int smallest = smallestElement2(arr, ++index);
   return arr[index] < smallest ? arr[index] : smallest;
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 5. Reverse the Array
@@ -139,8 +139,8 @@ void reverseArray2(List<int> arr) {
 
   print(copyArray);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 // Two pointer approach
@@ -188,8 +188,8 @@ void reverseArray3(List<int> arr) {
 
   print(arr);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 // Recursive
@@ -209,8 +209,8 @@ void reverseRecursion(List<int> arr, int start, int end) {
 
   reverseRecursion(arr, ++start, --end);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 // Using Stack
@@ -229,8 +229,8 @@ void reverseArray5(List<int> arr) {
 
   print(arr);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 6. Count Even and Odd Numbers
@@ -249,8 +249,8 @@ void countEvenAndOdd1(List<int> arr) {
 
   print('$evenCount  ,  $oddCount');
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 // Recursive
@@ -262,8 +262,8 @@ void countEvenAndOdd2(List<int> arr) {
 
   print(res);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 (int, int) countEvenAndOddRecursive(
@@ -284,8 +284,8 @@ void countEvenAndOdd2(List<int> arr) {
 
   return countEvenAndOddRecursive(arr, ++index, evenCount, oddCount);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 7. Copy One Array to Another
@@ -296,8 +296,8 @@ void copyArray(List<int> arr) {
     tempArr.add(arr[i]);
   }
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 8. Remove Duplicates from Array
@@ -307,8 +307,8 @@ void removeDuplicates1(List<int> arr) {
 
   print(result);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 // using copy array
@@ -324,8 +324,8 @@ void removeDuplicates2(List<int> arr) {
 
   print(tempArr);
 
-  // Time Complexcity = O(n2)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n2)
+  // Space Complexity = O(n)
 }
 
 // HashMap
@@ -347,8 +347,8 @@ void removeDuplicates3(List<int> arr) {
 
   print(uniqueElement);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! 9. Rotate Array to the Left by One
@@ -370,8 +370,8 @@ void rotateArrayLeft1(List<int> arr) {
   arr.add(temp);
   print(arr);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 // Iterative
@@ -391,8 +391,8 @@ void rotateArrayLeft2(List<int> arr) {
 
   print(arr);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(1)
+  // Time Complexity = O(n)
+  // Space Complexity = O(1)
 }
 
 //! 10. Count Frequency of Each Element
@@ -414,8 +414,8 @@ void frequencyCount1(List<int> arr) {
   }
   print(frequencyMap);
 
-  // Time Complexcity = O(n2)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n2)
+  // Space Complexity = O(n)
 }
 
 // hashmap
@@ -431,8 +431,8 @@ void frequencyCount2(List<int> arr) {
 
   print(frequencyMap);
 
-  // Time Complexcity = O(n)
-  // Space Complexcity = O(n)
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
 
 //! Adding more
@@ -492,4 +492,72 @@ void removeDuplicates04(List<int> arr) {
   }
 
   arr.length = left + 1;
+}
+
+/*
+Leaders in an array
+
+Given an array arr[] of size n,
+the task is to find all the Leaders in the array.
+An element is a Leader if it is greater than or equal to all
+the elements to its right side.
+
+Note: The rightmost element is always a leader.
+Input: arr[] = [16, 17, 4, 3, 5, 2]
+Output: [17 5 2]
+Explanation: 17 is greater than all the elements to its right i.e.,
+[4, 3, 5, 2], therefore 17 is a leader.
+5 is greater than all the elements to its right i.e.,
+[2], therefore 5 is a leader. 2 has no element to its right,
+therefore 2 is a leader.
+
+Input: arr[] = [1, 2, 3, 4, 5, 2]
+Output: [5 2]
+Explanation: 5 is greater than all the elements to its right i.e.,
+[2], therefore 5 is a leader. 2 has no element to its right,
+therefore 2 is a leader.
+*/
+
+void leaderApp1(List<int> arr) {
+  List<int> res = [];
+  int n = arr.length;
+
+  for (int i = 0; i < n - 1; i++) {
+    bool isLeader = true;
+    for (int j = i + 1; j < n; j++) {
+      if (arr[i] < arr[j]) {
+        isLeader = false;
+        break;
+      }
+    }
+    if (isLeader) {
+      res.add(arr[i]);
+    }
+  }
+  res.add(arr[n - 1]);
+
+  print(res);
+}
+
+void leaderApp2(List<int> arr) {
+  if (arr.isEmpty) {
+    return;
+  }
+  List<int> res = [];
+  int n = arr.length;
+
+  int maxRight = arr[n - 1];
+
+  res.add(maxRight);
+
+  for (var i = n - 2; i > 0; i--) {
+    if (arr[i] > maxRight) {
+      maxRight = arr[i];
+      res.add(maxRight);
+    }
+  }
+
+  res.reversed;
+
+  print(res);
 }

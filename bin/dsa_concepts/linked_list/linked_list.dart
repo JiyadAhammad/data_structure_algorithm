@@ -79,8 +79,8 @@ class LinkedList {
     }
     stdout.write('null');
     print('');
-    // Time Complexcity = O(n)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(n)
+    // Space Complexity = O(1)
   }
 
   //! 2. Insert a Node at the Beginning
@@ -92,8 +92,8 @@ class LinkedList {
     } else {
       head = newNode;
     }
-    // Time Complexcity = O(1)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(1)
+    // Space Complexity = O(1)
   }
 
   //! 3. Insert a Node at the End
@@ -107,8 +107,8 @@ class LinkedList {
       tail!.next = newNode;
       tail = newNode;
     }
-    // Time Complexcity = O(1)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(1)
+    // Space Complexity = O(1)
   }
 
   // if not keeping tail
@@ -124,8 +124,8 @@ class LinkedList {
     }
     current.next = newNode;
 
-    // Time Complexcity = O(n)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(n)
+    // Space Complexity = O(1)
   }
 
   //! 4. Insert a Node at a Specific Position
@@ -182,8 +182,8 @@ class LinkedList {
     newNode.next = current!.next;
     current.next = newNode;
 
-    // Time Complexcity = O(n)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(n)
+    // Space Complexity = O(1)
   }
 
   //! 5. Delete a Node by Value
@@ -218,8 +218,8 @@ class LinkedList {
 
     temp?.next = temp.next?.next;
 
-    // Time Complexcity = O(n)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(n)
+    // Space Complexity = O(1)
   }
 
   //! 6. Delete a Node at a Specific Position
@@ -252,8 +252,8 @@ class LinkedList {
 
     current.next = current.next?.next;
 
-    // Time Complexcity = O(n)
-    // Space Complexcity = O(1)
+    // Time Complexity = O(n)
+    // Space Complexity = O(1)
   }
 
   //! 7. Search for an Element in the Linked List
@@ -274,8 +274,8 @@ class LinkedList {
       current = current.next;
     }
 
-    // Time complexcity 0(n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(n)
+    // Space Complexity 0(1)
   }
 
   //! 8. Reverse a Linked List
@@ -297,8 +297,8 @@ class LinkedList {
     }
     head = prev;
 
-    // Time complexcity 0(n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(n)
+    // Space Complexity 0(1)
   }
 
   //! 9. Find the Length of the Linked List
@@ -312,8 +312,8 @@ class LinkedList {
     }
     print('length of linked list = $pos');
 
-    // Time complexcity 0(n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(n)
+    // Space Complexity 0(1)
   }
 
   //! Find the Middle Element
@@ -335,8 +335,8 @@ class LinkedList {
 
     print('Middle is ${current!.data}');
 
-    // Time complexcity 0(2n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(2n)
+    // Space Complexity 0(1)
   }
 
   // Slow-Fast Appraoch // Two pointer
@@ -350,8 +350,8 @@ class LinkedList {
     }
 
     print('Middle is ${slow!.data}');
-    // Time complexcity 0(n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(n)
+    // Space Complexity 0(1)
   }
 
   //! 11. Detect a Loop in the Linked List
@@ -373,8 +373,8 @@ class LinkedList {
 
     print('No cycle detected');
 
-    // Time complexcity 0(n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(n)
+    // Space Complexity 0(1)
   }
 
   // Start node of a cycle
@@ -406,8 +406,8 @@ class LinkedList {
 
     print('${slow!.data} is the start of cycle');
 
-    // Time complexcity 0(2n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(2n)
+    // Space Complexity 0(1)
   }
 
   // Remove cycle
@@ -443,8 +443,8 @@ class LinkedList {
 
     prev = null;
 
-    // Time complexcity 0(2n)
-    // Space complexcity 0(1)
+    // Time Complexity 0(2n)
+    // Space Complexity 0(1)
   }
 
   //! 12. Check if the Linked List is a Palindrome
@@ -472,8 +472,8 @@ class LinkedList {
 
     print('Palindrome');
 
-    // Time complexcity 0(2n)
-    // Space complexcity 0(n) -> took a new list of stack
+    // Time Complexity 0(2n)
+    // Space Complexity 0(n) -> took a new list of stack
   }
 
   // implementing without extra space

@@ -3,9 +3,7 @@ import 'dart:async';
 import 'imports.dart';
 
 void main() {
-  final result = sortColors([1, 2, 0]);
-
-  print(result);
+  leaderApp2([16, 17, 4, 3, 5, 2]);
 }
 
 void printNewMessage() {
